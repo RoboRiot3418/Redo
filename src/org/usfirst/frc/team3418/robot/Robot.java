@@ -7,6 +7,7 @@
 package org.usfirst.frc.team3418.robot;
 
 import edu.wpi.first.wpilibj.IterativeRobot;
+import edu.wpi.first.wpilibj.Solenoid;
 
 /**
  * The VM is configured to automatically run this class, and to call the
@@ -20,6 +21,14 @@ public class Robot extends IterativeRobot {
      * This function is run when the robot is first started up and should be
      * used for any initialization code.
      */
+	
+	
+	Solenoid clamp = new Solenoid(0);
+	boolean once;
+	int stick;
+	
+	
+	
     public void robotInit() {
 
     }
@@ -36,7 +45,32 @@ public class Robot extends IterativeRobot {
      */
     public void teleopPeriodic() {
         
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    // CLAMP
+    	
+    	
+    	
+    	
+    if (stick.getrawbutton()>0){
+    		if (once == true )
+    		{
+    			clamp.set(!clamp.get());
+    			once = false;
+    		}
+    	}
+    else {
+    		once = true;
+    	
+    	}
     }
+    
+    
     
     /**
      * This function is called periodically during test mode
